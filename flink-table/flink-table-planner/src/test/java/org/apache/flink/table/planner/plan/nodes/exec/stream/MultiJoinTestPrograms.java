@@ -1657,11 +1657,12 @@ public class MultiJoinTestPrograms {
                     .setupTableSource(
                             SourceTestStep.newBuilder("Users4K")
                                     .addSchema(
-                                            "k1 STRING PRIMARY KEY NOT ENFORCED",
+                                            "k1 STRING NOT NULL",
                                             "k2 INT",
                                             "k3 BOOLEAN",
                                             "k4 STRING",
-                                            "name STRING")
+                                            "name STRING NOT NULL",
+                                            "PRIMARY KEY (k1, name) NOT ENFORCED")
                                     .producedValues(
                                             Row.ofKind(
                                                     RowKind.INSERT,

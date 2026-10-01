@@ -50,6 +50,8 @@ function test_all_modules() {
 # CURRENT_DIR is "flink/flink-python/dev/"
 CURRENT_DIR="$(cd "$( dirname "$0" )" && pwd)"
 
+export FLINK_TESTING=1
+
 # FLINK_PYTHON_DIR is "flink/flink-python"
 FLINK_PYTHON_DIR=$(dirname "$CURRENT_DIR")
 
